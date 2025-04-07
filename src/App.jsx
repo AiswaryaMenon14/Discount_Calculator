@@ -33,7 +33,6 @@ function App() {
     <div className="cover">
       <div
         style={{
-          width: "50%",
           textAlign: "center",
         }}
       >
@@ -43,7 +42,7 @@ function App() {
           alt=""
           width="10%"
         />
-        <div style={{}}>
+        <div style={{ width: "100%" }}>
           <TextField
             id="standard-basic"
             label="Enter Amount"
@@ -53,7 +52,7 @@ function App() {
           />
         </div>
 
-        <div>
+        <div style={{ width: "100%" }}>
           <TextField
             id="standard-basic"
             label="Enter Discount"
@@ -63,7 +62,11 @@ function App() {
           />
         </div>
         <div className="button">
-          <Button variant="contained" onClick={(e) => calculateDiscount(e)}>
+          <Button
+            variant="contained"
+            onClick={(e) => calculateDiscount(e)}
+            style={{ marginRight: "20px" }}
+          >
             Calculate
           </Button>
           <Button variant="outlined" onClick={reset}>
@@ -71,9 +74,11 @@ function App() {
           </Button>
         </div>
       </div>
-      <div style={{ width: "50%" }}>
+      <div className="data">
+        {" "}
         {discountAmount !== null && (
           <div className="mt-6">
+            <h1>New Rate</h1>
             <p>
               <strong>Discount Amount:</strong> ₹{discountAmount}
             </p>
